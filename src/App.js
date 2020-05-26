@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router } from "react-router-dom";
+import Main from "./components/Main";
+import Loader from "./components/Loader";
 
 function App() {
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() =>{
+      setLoader(false)
+    }, 2000);
+    // eslint-disable-next-line
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+    {loader ? <Loader /> :
+        <Router>
+        <div className="App d-flex">
+          <Navbar />
+          <Main />
+        </div>
+      </Router>
+    }
+
+    </React.Fragment>
   );
 }
 

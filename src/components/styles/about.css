@@ -1,0 +1,103 @@
+.about {
+  font-family: "cf_samurai_bobregular", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.resume {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.resume__info {
+  width: 90%;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.resume__info_block {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+
+}
+
+.resume__info_block:nth-of-type(odd) .box:nth-child(odd), .resume__info_block:nth-of-type(even) .box:nth-child(even){
+    background: #d80027;
+    animation-delay: 2s;
+    flex-direction: column;
+    color: white;
+    font-size: 2rem;
+}
+.box{
+    margin: 1rem;
+    background: #ffff;
+    z-index: 1;
+    animation-duration: 3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: #d80027;
+    border-radius: 5%;
+}
+
+.box:nth-child(even) {
+  grid-column-start: 3;
+}
+
+.right__about {
+  height: 100vh;
+  background: #d80027;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  z-index: 3;
+}
+.right-image {
+  width: 80%;
+  margin: 10% 0;
+}
+.right-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 5%;
+  filter: grayscale(100%);
+  transition: .3s ease-in-out;
+}
+.right-image img{
+	filter: grayscale(0);
+}
+.right-info {
+  padding: 5%;
+}
+.right-info h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+.right-info p {
+  font-size: 2rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+@media(max-width: 768px){
+  .about{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .right__about{
+    height: auto;
+  }
+}
+@media(max-width: 657px){
+  .resume__info_block{
+    display: flex;
+    flex-direction: column;
+  }
+  .resume__info_block:nth-of-type(odd){
+    flex-direction: column-reverse;
+  }
+}

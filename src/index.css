@@ -1,13 +1,30 @@
-body {
+
+@font-face {
+  font-family: 'cf_samurai_bobregular';
+  src: url('./assets/fonts/cfsamuraibobregular-rmg8-webfont.woff2') format('woff2'),
+       url('./assets/fonts/cfsamuraibobregular-rmg8-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.App{
+  display: flex;
+  justify-content:space-between;
+  background: #f5eded;
+  margin-left: 6%;
+}
+.main{
+  width: 100%;
+}
+@media(max-width: 991px){
+ .App{
+   flex-direction: column;
+   margin-left: 0;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
