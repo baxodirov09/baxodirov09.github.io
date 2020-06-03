@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import img from '../assets/IMG_9642.JPG'
 import './styles/about.css'
 const About = () => {
+    useEffect(() => {
+    document.title ="About"
+  }, [])
+    
     return (    
         <section className='about'>
             <div className="resume">
